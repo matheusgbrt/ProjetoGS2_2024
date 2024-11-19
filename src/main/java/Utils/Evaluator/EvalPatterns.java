@@ -25,6 +25,8 @@ public  class EvalPatterns{
             public boolean allowNegative;
             public boolean allowZero;
             public boolean allowEmpty;
+            public int minValue;
+            public int maxValue;
             public List<Integer> allowedValues;
         }
 

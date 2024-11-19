@@ -98,6 +98,22 @@ boolean _debug = false;
             valid = false;
             errorList.add(String.format("%s não pode ser vazio!", _field));
         }
+
+        if(options.minValue!= 0){
+            if(!(options.minValue <= number)){
+                valid=false;
+                errorList.add(String.format("%s não pode ser menor que %d",_field,options.minValue));
+            }
+        }
+
+        if(options.maxValue!= 0){
+            if(!(options.maxValue >= number)){
+                valid=false;
+                errorList.add(String.format("%s não pode ser maior que %d",_field,options.maxValue));
+            }
+        }
+
+
         if (!options.allowZero && number == 0) {
             valid = false;
             errorList.add(String.format("%s não pode ser zero!", _field));

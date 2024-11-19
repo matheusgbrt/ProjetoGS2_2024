@@ -46,9 +46,9 @@ public class MainState extends BaseState {
         ScreenWriter.WriteEmptyLine();
         ScreenWriter.Write("Selecione a opção abaixo:");
         ScreenWriter.Write("1. Visualizar dados do Usuário");
-        ScreenWriter.Write("2. Visualizar Notificações do Usuario");
-        ScreenWriter.Write("3. Selecionar Conta");
-        ScreenWriter.Write("4. Cadastrar nova Conta");
+        ScreenWriter.Write("2. Selecionar Projeto");
+        ScreenWriter.Write("3. Cadastrar novo Projeto");
+        ScreenWriter.Write("4. Remover Projeto");
         ScreenWriter.Write("0. Sair");
         ScreenWriter.WriteEmptyLine();
     }
@@ -61,6 +61,9 @@ public class MainState extends BaseState {
             case 1:
                 _user.print_userData();
                 InitMain(false);
+                break;
+            case 3:
+                new RegisterProject();
                 break;
         }
 /*            case 2:

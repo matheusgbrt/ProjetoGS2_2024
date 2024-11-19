@@ -53,7 +53,8 @@ public class BaseState {
         return pattern;
     }
 
-    protected EvalPatterns getNomeContaPattern() {
+
+    protected EvalPatterns getProjectNamePattern() {
         EvalPatterns pattern = new EvalPatterns(DataTypes.STRING);
         EvalPatterns.StringOptions options = new EvalPatterns.StringOptions();
         options.allowEmpty = false;
@@ -61,6 +62,30 @@ public class BaseState {
         pattern.setOptions(options);
         return pattern;
     }
+
+    protected EvalPatterns getMinMaxIntegerPattern(int minValue,int maxValue) {
+        EvalPatterns pattern = new EvalPatterns(DataTypes.INTEGER   );
+        EvalPatterns.IntegerOptions options = new EvalPatterns.IntegerOptions();
+        options.allowEmpty = false;
+        options.allowZero = false;
+        options.allowNegative = false;
+        options.minValue = minValue;
+        options.maxValue = maxValue;
+        pattern.setOptions(options);
+        return pattern;
+    }
+
+
+    protected EvalPatterns getBasicintegerPattern() {
+        EvalPatterns pattern = new EvalPatterns(DataTypes.INTEGER);
+        EvalPatterns.IntegerOptions options = new EvalPatterns.IntegerOptions();
+        options.allowEmpty = false;
+        options.allowZero = false;
+        options.allowNegative = false;
+        pattern.setOptions(options);
+        return pattern;
+    }
+
 
 
     protected EvalPatterns getTelefonePattern() {
@@ -83,16 +108,6 @@ public class BaseState {
         return pattern;
     }
 
-    protected EvalPatterns GetBalancePattern(double minValue){
-        EvalPatterns pattern = new EvalPatterns(DataTypes.DOUBLE);
-        EvalPatterns.DoubleOptions options = new EvalPatterns.DoubleOptions();
-        options.allowEmpty=false;
-        options.allowNegative=false;
-        options.allowZero=false;
-        options.minValue = minValue;
-        pattern.setOptions(options);
-        return pattern;
-    }
 
 
 }
